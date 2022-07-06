@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbofficeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbloffice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employeename" Type="varchar" MaxLength="100" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="phone" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblcountrymast">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="country_name" Type="varchar(max)" />
+    <Property Name="currency" Type="varchar" MaxLength="50" />
+    <Property Name="nationality" Type="varchar(max)" />
+    <Property Name="rco" Type="varchar" MaxLength="50" />
+    <Property Name="rcm" Type="datetime" />
+    <Property Name="del_sts" Type="char" MaxLength="1" />
+    <Property Name="luo" Type="varchar" MaxLength="50" />
+    <Property Name="lum" Type="datetime" />
+    <Property Name="callcode" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblstudentdlt">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="studentname" Type="varchar" MaxLength="100" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="mobile" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="gender" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="100" />
+    <Property Name="fileupload" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblstudentinfo">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="studentname" Type="varchar" MaxLength="100" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="mobile" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="gender" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="100" />
+    <Property Name="fileupload" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="dbofficeModelStoreContainer">
+    <EntitySet Name="tbloffice" EntityType="Self.tbloffice" Schema="emp" store:Type="Tables" />
+    <EntitySet Name="tblcountrymast" EntityType="Self.tblcountrymast" Schema="std" store:Type="Tables" />
+    <EntitySet Name="tblstudentdlt" EntityType="Self.tblstudentdlt" Schema="std" store:Type="Tables" />
+    <EntitySet Name="tblstudentinfo" EntityType="Self.tblstudentinfo" Schema="std" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

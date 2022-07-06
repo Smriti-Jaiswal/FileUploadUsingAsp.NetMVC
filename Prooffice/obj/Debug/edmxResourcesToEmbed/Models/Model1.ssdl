@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbofficeModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblcountrymast">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="country_name" Type="varchar(max)" />
+    <Property Name="currency" Type="varchar" MaxLength="50" />
+    <Property Name="nationality" Type="varchar(max)" />
+    <Property Name="rco" Type="varchar" MaxLength="50" />
+    <Property Name="rcm" Type="datetime" />
+    <Property Name="del_sts" Type="char" MaxLength="1" />
+    <Property Name="luo" Type="varchar" MaxLength="50" />
+    <Property Name="lum" Type="datetime" />
+    <Property Name="callcode" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbloffice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employeename" Type="varchar(max)" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="phone" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblstudentdlt">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="studentname" Type="varchar(max)" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="mobile" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" />
+    <Property Name="gender" Type="varchar(max)" />
+    <Property Name="country" Type="varchar(max)" />
+    <Property Name="fileupload" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblstudentinfo">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="studentname" Type="varchar(max)" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="mobile" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" />
+    <Property Name="gender" Type="varchar(max)" />
+    <Property Name="country" Type="varchar(max)" />
+    <Property Name="fileupload" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="dbofficeModel1StoreContainer">
+    <EntitySet Name="tblcountrymast" EntityType="Self.tblcountrymast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbloffice" EntityType="Self.tbloffice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblstudentdlt" EntityType="Self.tblstudentdlt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblstudentinfo" EntityType="Self.tblstudentinfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

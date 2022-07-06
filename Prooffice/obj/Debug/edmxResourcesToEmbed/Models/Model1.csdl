@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbofficeModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblcountrymast">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="Guid" Nullable="false" />
+    <Property Name="country_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rcm" Type="DateTime" Precision="3" />
+    <Property Name="del_sts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="luo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lum" Type="DateTime" Precision="3" />
+    <Property Name="callcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbloffice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="employeename" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblstudentdlt">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="Guid" Nullable="false" />
+    <Property Name="studentname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="fileupload" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblstudentinfo">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="Guid" Nullable="false" />
+    <Property Name="studentname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="fileupload" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="dbofficeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblcountrymasts" EntityType="Self.tblcountrymast" />
+    <EntitySet Name="tbloffices" EntityType="Self.tbloffice" />
+    <EntitySet Name="tblstudentdlts" EntityType="Self.tblstudentdlt" />
+    <EntitySet Name="tblstudentinfoes" EntityType="Self.tblstudentinfo" />
+  </EntityContainer>
+</Schema>

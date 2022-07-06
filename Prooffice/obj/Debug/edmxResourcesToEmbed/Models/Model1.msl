@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbofficeModel1StoreContainer" CdmEntityContainer="dbofficeEntities">
+    <EntitySetMapping Name="tblcountrymasts">
+      <EntityTypeMapping TypeName="dbofficeModel1.tblcountrymast">
+        <MappingFragment StoreEntitySet="tblcountrymast">
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="rco" ColumnName="rco" />
+          <ScalarProperty Name="rcm" ColumnName="rcm" />
+          <ScalarProperty Name="del_sts" ColumnName="del_sts" />
+          <ScalarProperty Name="luo" ColumnName="luo" />
+          <ScalarProperty Name="lum" ColumnName="lum" />
+          <ScalarProperty Name="callcode" ColumnName="callcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbloffices">
+      <EntityTypeMapping TypeName="dbofficeModel1.tbloffice">
+        <MappingFragment StoreEntitySet="tbloffice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employeename" ColumnName="employeename" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblstudentdlts">
+      <EntityTypeMapping TypeName="dbofficeModel1.tblstudentdlt">
+        <MappingFragment StoreEntitySet="tblstudentdlt">
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="studentname" ColumnName="studentname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="fileupload" ColumnName="fileupload" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblstudentinfoes">
+      <EntityTypeMapping TypeName="dbofficeModel1.tblstudentinfo">
+        <MappingFragment StoreEntitySet="tblstudentinfo">
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="studentname" ColumnName="studentname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="fileupload" ColumnName="fileupload" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

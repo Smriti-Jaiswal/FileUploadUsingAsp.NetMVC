@@ -1,0 +1,68 @@
+﻿@model Prooffice.Models.CustomModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" href="~/Content/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/Content/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">*@
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <h2>Details</h2>
+                <table id="example1" class="table table-bordered table-striped" style="width:100%">
+                    <thead>
+
+                        <tr>
+                            @*<th class="hidden">Transid</th>*@
+                            <th>Sl. No.</th>
+                            <th>@Html.LabelFor(model => model.studentname, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.mobile, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.country, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>@Html.LabelFor(model => model.fileupload, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in ViewBag.details)
+                        {
+                            <tr>
+                                @*<td class="">@item.transid</td>*@
+                                <td>@(ViewBag.details.IndexOf(item) + 1)</td>
+                                <td>@item.studentname</td>
+                                <td>@item.address</td>
+                                <td>@item.mobile</td>
+                                <td>@item.email</td>
+                                <td>@item.gender</td>
+                                <td>@item.country</td>
+                                <td><a style="color:Highlight" href="@item.fileupload" target="_blank">View</a></td>
+                                <td>
+                                    <a class="btn btn-warning" href="@Url.Action("Edit", "Student", new {id=item.transid })"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-danger" href="@Url.Action("Delete", "Student", new {id=item.transid })" onclick="alert('Are you sure want to delete this record?')"><i class="fa fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @Html.ActionLink("Back to Add", "Index")
+            </div>
+        </div>
+    </div>
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        var msg = '@TempData["msg"]';
+        if (msg == "true") {
+            alert("Deleted successfully.....");
+        }     
+    });
+</script>}
+@*<script src="~/Content/plugins/jquery/jquery.min.js"></script>*@
+@*<script src="~/Content/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Content/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/Content/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/Content/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>*@
